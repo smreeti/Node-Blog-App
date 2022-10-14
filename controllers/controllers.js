@@ -1,3 +1,4 @@
+const Contact = require('../models/Contact');
 
 const index = (req, res) => {
     // res.sendFile(path.resolve(__dirname, 'pages/index.html'));
@@ -19,4 +20,13 @@ const post = (req, res) => {
     res.render('post');
 };
 
-module.exports = { index, about, contact, post };
+const sendContact = async (req, res) => {
+    console.log("Contact message called");
+    const { name, email, phone, message } = req.body;
+    await Contact.create({
+        name, email, phone, message
+    });
+    console.log("Contact message saved");
+}
+
+module.exports = { index, about, contact, post, sendContact };

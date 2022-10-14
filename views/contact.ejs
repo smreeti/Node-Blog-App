@@ -34,7 +34,7 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="/sendContact" method="post">
                                 <div class="form-floating">
                                     <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                     <label for="name">Name</label>
@@ -68,7 +68,7 @@
                                         <br />
                                         <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
-                                </div>
+                                </div> 
                                 <!-- Submit error message-->
                                 <!---->
                                 <!-- This is what your users will see when there is-->
