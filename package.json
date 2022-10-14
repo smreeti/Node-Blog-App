@@ -1,0 +1,22 @@
+{
+  "name": "node-blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smreeti/Node-Blog-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smreeti/Node-Blog-App/issues"
+  },
+  "homepage": "https://github.com/smreeti/Node-Blog-App#readme",
+  "dependencies": {
+    "node": "^18.10.0"
+  }
+}
