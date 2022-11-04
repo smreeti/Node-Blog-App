@@ -8,3 +8,4 @@
 6. npm install express
 7. npm install ejs
 8. npm install mongoose
+9. npm install --save express-fileupload

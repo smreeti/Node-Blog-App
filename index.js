@@ -6,15 +6,17 @@ const mongoose = require('mongoose');
 
 const router = require('./routes/routes.js');
 const fileUpload = require('express-fileupload');
+const customMiddleware = require('./middleware/customMiddleware');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileUpload());
+app.use(customMiddleware);
+app.use(router);
 
 app.set('view engine', 'ejs');
-app.use(router);
 
 mongoose.connect('mongodb+srv://smriti:mongodb@cluster0.v3tjgvx.mongodb.net/Employees_Rogers?retryWrites=true&w=majority',
     { useUnifiedTopology: true, useNewUrlParser: true }, (error) => {
