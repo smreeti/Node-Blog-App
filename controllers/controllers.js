@@ -29,6 +29,11 @@ const sendContact = async (req, res) => {
     });
     console.log("Contact message saved");
     res.render('contact');
+};
+
+const users = async (req, res) => {
+    const userDetails = await Contact.find({});
+    res.render('users', { userDetails });
 }
 
-module.exports = { index, about, contact, post, sendContact };
+module.exports = { index, about, contact, post, sendContact, users };
