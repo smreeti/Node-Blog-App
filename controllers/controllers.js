@@ -22,11 +22,13 @@ const post = (req, res) => {
 
 const sendContact = async (req, res) => {
     console.log("Contact message called");
+    console.log(req.body);
     const { name, email, phone, message } = req.body;
     await Contact.create({
         name, email, phone, message
     });
     console.log("Contact message saved");
+    res.render('contact');
 }
 
 module.exports = { index, about, contact, post, sendContact };
