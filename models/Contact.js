@@ -5,7 +5,8 @@ const ContactSchema = new Schema({
     'name': String,
     'email': String,
     'phone': String,
-    'message': String
+    'message': String,
+    'image': String
 });
 
 const Contact = mongoose.model('Contact', ContactSchema);

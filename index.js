@@ -5,11 +5,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const router = require('./routes/routes.js');
+const fileUpload = require('express-fileupload');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(fileUpload());
+
 app.set('view engine', 'ejs');
 app.use(router);
 

@@ -1,4 +1,5 @@
 const Contact = require('../models/Contact');
+const path = require('path');
 
 const index = (req, res) => {
     // res.sendFile(path.resolve(__dirname, 'pages/index.html'));
@@ -21,14 +22,17 @@ const post = (req, res) => {
 };
 
 const sendContact = async (req, res) => {
-    console.log("Contact message called");
-    console.log(req.body);
     const { name, email, phone, message } = req.body;
-    await Contact.create({
-        name, email, phone, message
+    let image = req.files.image;
+
+    image.mv(path.resolve(__dirname, 'public/assets/img', image.name), async (error) => {
+        await Contact.create({
+            name, email, phone, message,
+            image: '/img/' + image.name
+        });
+        console.log("Contact message saved");
+        res.render('contact');
     });
-    console.log("Contact message saved");
-    res.render('contact');
 };
 
 const users = async (req, res) => {
