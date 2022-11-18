@@ -3,6 +3,10 @@ const path = require('path');
 
 const index = (req, res) => {
     // res.sendFile(path.resolve(__dirname, 'pages/index.html'));
+    req.session.isAuth = true;
+    console.log(req.session);
+    console.log(req.session.id);
+
     res.render('index');
 };
 
